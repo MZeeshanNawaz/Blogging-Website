@@ -2,8 +2,9 @@
 
 body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
   background-color: pink;
-  color: gray;
+  color: #333;
   margin: 0;
   padding: 0;
 }
