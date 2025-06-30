@@ -2,16 +2,11 @@
 
 body {
   font-family: Arial, sans-serif;
-<<<<<<< HEAD
   line-height: 1.6;
   background-color: pink;
   color: #333;
-=======
-  background-color: pink;
-  color: gray;
   margin: 0;
   padding: 0;
->>>>>>> 91e45c9d32bca939c1093b27ee099f3e3dabd378
 }
 
 #page-header {
