@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <title>Blog Page</title>
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles/blog.css">
 </head>
 <body>
-  <!-- Header section -->
-  <header>
-    <h1 class="main-title">Welcome to My Blog page</h1>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#blog">Blogs</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <header id="blog-header">
+    <h1>Blog Page</h1>
+    <nav id="blog-nav">
+      <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main content -->
-  <main id="home">
-    <section class="intro">
-      <h2>Introduction</h2>
-      <p>This is a simple HTML page demonstrating basic structure and styling.</p>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Here you can add information about yourself or your project.</p>
+  <main id="blog-content">
+    <section id="posts">
+      <h2>Recent Blog Posts</h2>
+      <article id="post-1">
+        <h3>Post Title</h3>
+        <p>This is the content of the first blog post.</p>
+      </article>
+      <article id="post-2">
+        <h3>Post Title</h3>
+        <p>This is the content of the second blog post.</p>
+      </article>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <p>Contact me at <a href="mailto:you@example.com">you@example.com</a></p>
+  <footer id="blog-footer">
+    <p>&copy; 2025 Blogging Website. All rights reserved.</p>
   </footer>
 </body>
 </html>
