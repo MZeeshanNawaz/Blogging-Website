@@ -1,32 +1,27 @@
-name: PR Validation
-
+name: wf-ci-develop
 on:
   pull_request:
-    branches: [ develop ]
-
+    branches:
+      - develop
+    types:
+      - opened
+      - synchronize
 jobs:
-  lint:
-    name: Lint HTML & CSS
+  linting-develop-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Install linters
-        run: npm install --save-dev htmlhint stylelint stylelint-config-standard
-      - name: HTMLHint
-        run: npx htmlhint "src/**/*.html" --config .htmlhintrc.json
-      - name: Stylelint
-        run: npx stylelint "styles/**/*.css" --config .stylelintrc.json
-
-  build:
-    name: Build with Parcel
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Lint HTML Files With HTMLHint
+        run: npx htmlhint "**/*.html"
+      - name: Lint CSS Files With Stylelint
+        run: npx stylelint "**/*.css" 
+  build-develop-job:
     runs-on: ubuntu-latest
-    needs: lint
     steps:
-      - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm install parcel --save-dev
-      - name: Build
-        run: npx parcel build src/*.html --dist-dir build
-        with:
-          path: "build"
-          name: "Build-Artifact"
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Test Builing With Parcel
+        run: npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./" 
+      
+  

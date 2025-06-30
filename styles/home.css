@@ -1,58 +1,47 @@
-/* Reset some defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Home Page Styles */
 
-/* Body styles */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: pink;
+  color: gray;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header */
-header {
-  background-color: #005f73;
-  color: white;
+#page-header {
+  background-color: blue;
+  color: gray;
   padding: 1rem;
-  text-align: center;
 }
 
-/* Main title */
-.main-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Navigation list */
-.nav-list {
+#main-nav ul {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-list a {
+#main-nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+a {
   color: white;
   text-decoration: none;
 }
 
-/* Sections */
-section {
-  background: white;
-  margin: 1rem auto;
-  padding: 1rem;
-  max-width: 800px;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+#content {
+  padding: 2rem;
+  background-color: #ffffff;
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
-footer {
+#page-footer {
   text-align: center;
-  padding: 1rem;
   font-size: 0.9rem;
+  padding: 1rem;
+  background-color: #eeeeee;
+  color: #333333;
 }

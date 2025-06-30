@@ -1,58 +1,42 @@
-/* Reset some defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Blog Page Styles */
 
-/* Body styles */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: Verdana, sans-serif;
+  background-color: pink;
+  color: gray;
 }
 
-/* Header */
-header {
-  background-color: #005f73;
-  color: white;
+#blog-header {
+  background-color: blue;
+  color: gray;
   padding: 1rem;
-  text-align: center;
 }
 
-/* Main title */
-.main-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Navigation list */
-.nav-list {
+#blog-nav ul {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  padding: 0;
 }
 
-.nav-list a {
+#blog-nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+a {
   color: white;
   text-decoration: none;
 }
 
-/* Sections */
-section {
-  background: white;
-  margin: 1rem auto;
-  padding: 1rem;
-  max-width: 800px;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+#blog-content {
+  padding: 2rem;
 }
 
-/* Footer */
-footer {
+#posts article {
+  margin-bottom: 2rem;
+}
+
+#blog-footer {
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
+  background-color: #eee;
 }

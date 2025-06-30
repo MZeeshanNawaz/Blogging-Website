@@ -1,26 +1,32 @@
-name: Deploy to GitHub Pages
-
+name: wf-cd-develop
 on:
   push:
-    branches: [ develop ]
-
+    branches:
+      - develop
 jobs:
-  build:
-    name: Build & Package
+  upload-job-develop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install parcel --save-dev
-      - run: npx parcel build src/*.html --dist-dir public
-      - name: Upload artifact
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Build Artifacts with Parcel
+        run: npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+      - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
-
-  deploy:
-    name: Deploy Pages
+          path: ./dist
+          name: build-artifact-develop
+  deploy-job-develop:
+    needs: upload-job-develop
     runs-on: ubuntu-latest
-    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: develop-env
     steps:
-      - name: Deploy
+      - name: Deploy Build Artifacts on Git Pages
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: build-artifact-develop
+          token: ${{secrets.GITHUB_TOKEN}}
